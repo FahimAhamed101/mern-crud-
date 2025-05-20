@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router";
 import App from "./App";
 import ManageProducts from "./ManageProducts";
  import AddProduct from "./AddProduct";
+ import UpdateProducts from "./UpdateProducts";
 const RoutePage = () => {
   return (
     <div>
@@ -17,7 +18,14 @@ const RoutePage = () => {
           
             }
           />
-
+        <Route
+            path="edit/:id"
+            element={
+              
+               <UpdateProducts/>
+             
+            }
+          />
     
       </Routes>
     </div>

@@ -61,14 +61,14 @@ export const getAllProducts = async (req, res) => {
 export const getSingleProduct=async(req,res)=>{
     const {id} = req.params;
    try {
-    const product  = await Products.findById(id).populate('author', 'username email');
+    const product  = await Products.findById(id)
     
     if(!product) {
         return errorResponse(res, 404, "Product not found")
     }
    
 
-    return successResponse(res, 200, "Single Product and reviews ",{product, reviews})
+    return successResponse(res, 200, "Single Product and reviews ",{product})
 
    } catch (error) {
     return errorResponse(res, 500, "Failed to get single product", error)
