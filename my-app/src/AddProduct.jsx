@@ -53,7 +53,7 @@ const AddProduct = () => {
     }
 
     try {
-        await AddProduct({...product, image, author: user?._id}).unwrap();
+        await AddProduct({...product, image}).unwrap();
         alert('Product added successfully!');
         setProduct({
             name: '',
